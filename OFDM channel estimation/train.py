@@ -33,7 +33,6 @@ def train_net(net, train_data_loader, test_data_loader, device, dtype, lr, T_max
     min_mse = 1e9
     
     for epoch in range(epochs):
-        start_time = time.time()
         net.train()
         train_loss = 0
         train_batches = 0
@@ -85,7 +84,7 @@ def train_net(net, train_data_loader, test_data_loader, device, dtype, lr, T_max
         if save_max:
             torch.save(net.state_dict(), os.path.join(out_dir, 'checkpoint_max.pth'))
 
-        print(f'epoch={epoch}, train_loss={train_loss:.4f}, test_loss={test_loss:.4f}, total_time={time.time() - start_time:.4f}')
+        print(f'epoch={epoch}, train_loss={train_loss:.4f}, test_loss={test_loss:.4f}')
 
 def test_SNR(net, test_set, device, dtype, batch_size, num_workers):
     T = test_set.data.size(0)
