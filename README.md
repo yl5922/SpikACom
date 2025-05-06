@@ -6,12 +6,16 @@ This repository contains the simulation code for the paper:
 ## Table of Contents
 - [Introduction](#introduction)
 - [Dependencies](#dependencies)
-- [Demo of Use](#demo-of-use)
+- [Use Instruction](#use-instruction)
 - [License](#license)
-
+- [Citation](#citation)
+  
 ## Introduction
 
 SpikACom is a neuromorphic computing framework designed to enable energy-efficient and adaptive communication by leveraging spiking neural networks (SNNs). It is <u>optimized for</u> dynamic wireless environments, which can</u> efficiently adapt to new channel distributions with significantly <u>reduced</u> catastrophic forgetting. This repository provides the simulation code used in our paper to evaluate its performance in three representative communication scenarios: <u>task-oriented semantic communication, MIMO beamforming,</u> and OFDM channel estimation.
+<p align="center">
+  <img src="brain_inspired_continuous.png" width="60%">
+</p>
 
 ## Dependencies
 
@@ -37,7 +41,7 @@ source env/bin/activate  # On Windows use: env\Scripts\activate
 pip install spikingjelly==0.0.0.0.14 numpy==1.24.3 scipy==1.15.1 h5py==3.5.0
 ```
 
-## Demo of Use
+## Use Instruction
 
 ### 🔥 Task-Oriented Semantic Communications
 
@@ -124,6 +128,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
+## Citation
 We appreciate your interest in this work and welcome your feedback!  
 If you find this repository useful, please consider citing the following paper:
 
