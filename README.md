@@ -6,27 +6,29 @@ This repository contains the simulation code for the paper:
 ## Table of Contents
 - [Introduction](#introduction)
 - [Dependencies](#dependencies)
+- [Demo of Use](#demo-of-use)
 - [License](#license)
 
 ## Introduction
 
-SpikACom is a neuromorphic computing framework designed to enable energy-efficient and adaptive communication by leveraging spiking neural networks (SNNs). It is designed for dynamic wireless environments, which can efficiently adapt to new channel distributions with significantly alleviated catastrophic forgetting. This repository provides the simulation code used in our paper to evaluate the performance of SpikACom in three representative communication scenarios, including task-oriented semantic communications, MIMO beamforming, and OFDM channel estimation.
+SpikACom is a neuromorphic computing framework designed to enable energy-efficient and adaptive communication by leveraging spiking neural networks (SNNs). It is <u>suited for</u> dynamic wireless environments, <u>and can</u> efficiently adapt to new channel distributions with significantly <u>reduced</u> catastrophic forgetting. This repository provides the simulation code used in our paper to evaluate the performance of SpikACom in three representative communication scenarios: <u>task-oriented semantic communication, MIMO beamforming,</u> and OFDM channel estimation.
 
 ## Dependencies
 
 The code has been tested in the following environment:
 
-- **Python** = 3.10.13
-- **SpikingJelly** = 0.0.0.0.14
-- **NumPy** = 1.24.3
-- **SciPy** = 1.15.1
-- **h5py** = 3.5.0
+- **Python** = 3.10.13  
+- **SpikingJelly** = 0.0.0.0.14  
+- **NumPy** = 1.24.3  
+- **SciPy** = 1.15.1  
+- **h5py** = 3.5.0  
 
 To install the required dependencies, run:
 
 ```sh
 pip install spikingjelly==0.0.0.0.14 numpy==1.24.3 scipy==1.15.1 h5py==3.5.0
 ```
+
 Or create a virtual environment:
 
 ```sh
@@ -35,8 +37,10 @@ source env/bin/activate  # On Windows use: env\Scripts\activate
 pip install spikingjelly==0.0.0.0.14 numpy==1.24.3 scipy==1.15.1 h5py==3.5.0
 ```
 
-## Demo of use
+## Demo of Use
+
 ### 🔥 Task-Oriented Semantic Communications
+
 ---
 
 ### 📁 Project Structure
@@ -77,15 +81,15 @@ python train.py
 ### ✅ What the script does:
 
 1. **Dataset Processing**
-   - Uses [SpikingJelly](https://spikingjelly.readthedocs.io/zh-cn/latest/activation_based_en/neuromorphic_datasets.html) to unpack and convert DVS event data into tensors.
-   - This step is skipped if processed data already exists.
-> ⚠️ Note: The first-time preprocessing may take **30–50 minutes**.
+   - Uses [SpikingJelly](https://spikingjelly.readthedocs.io/zh-cn/latest/activation_based_en/neuromorphic_datasets.html) to unpack and convert DVS event data into frames.
+   - <u>Skips this step if processed data already exists.</u>  
+   > ⚠️ Note: The first-time preprocessing may take **30–50 minutes**.
 
 2. **Spiking CNN Training**
-   - Trains a spiking convolutional neural network for gesture recognition. 
-   - Extracts and stores convolutional (semantic) features into the folder ./saved_features (for saving time in the continous learning stage).
-> ⚠️ Note: - This script checks whether intermediate files already exist. If they do, training steps will be skipped.
-> Hence, if execution is interrupted by error, try deleting generated files manually to restart: `Initial_max.pth` and `./saved_features`.
+   - Trains a spiking convolutional neural network for gesture recognition.  
+   - Extracts and stores convolutional (semantic) features into the folder `./saved_features` <u>to save time in the continual learning stage</u>.  
+   > ⚠️ Note: The script checks whether intermediate files already exist. If they do, training steps will be skipped.  
+   > <u>If execution is interrupted by error, try deleting the generated files manually to restart</u>: `Initial_max.pth` and `./saved_features`.
 
 3. **Continual Learning with SpikACom**
    - Runs the SpikACom framework across dynamic environments with different PDPs.
@@ -93,32 +97,42 @@ python train.py
 
 ---
 
-### 🔥 MIMO Beaforming
-This file folder contains the basic code for SNN-based MIMO beamforming. For the sake of conventience, the script uses a rayleigh fading MIMO channels. So it is self-contained and you can simply run it 
-```
+### 🔥 MIMO Beamforming
+
+This folder contains the basic code for SNN-based MIMO beamforming. For convenience, the script uses <u>a Rayleigh fading MIMO channel</u>, so it is self-contained and can be run with:
+
+```bash
 python train.py
 ```
+
+You can also test performance on more complex ray-tracing models like [DeepMIMO](https://www.deepmimo.net).  
+In addition, a <u>parallel WMMSE solver</u> is implemented for fast baseline comparison.
+
 ---
 
-You can also test the performance in more complicated ray-tracing models like [DeepMIMO](https://www.deepmimo.net). In addition, I have implmented a parallel computing version of wmmse for comparison, which should be very fast to run.
+### 🔥 OFDM Channel Estimation
 
-### 🔥 OFDM channel estimation
-This file folder contains the basic code for SNN-based OFDM channel estimation, where the data is generated by the WINNER II channel model in [matlab communication toolbox](https://www.mathworks.com/help/comm/ug/winner-ii-channel.html).
-I am considering uploading the raw data or you can contact me for obtaining it.
+This folder contains the basic code for SNN-based OFDM channel estimation, where you can generate the channel dataset by using the WINNER II channel model in [MATLAB Communication Toolbox](https://www.mathworks.com/help/comm/ug/winner-ii-channel.html).  
 
+---
 
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-- 📄 Paper Link: https://arxiv.org/abs/2502.17168
+- 📄 Paper Link: [https://arxiv.org/abs/2502.17168](https://arxiv.org/abs/2502.17168)
 
 ---
 
-We appreciate your interest in this work and welcome your feedback! If you find this repository useful, please consider cite the following paper
+We appreciate your interest in this work and welcome your feedback!  
+If you find this repository useful, please consider citing the following paper:
+
+```bibtex
 @article{liu2025spikacom,
   title={SpikACom: A Neuromorphic Computing Framework for Green Communications},
   author={Liu, Yanzhen and Qin, Zhijin and Zhu, Yongxu and Li, Geoffrey Ye},
   journal={arXiv preprint arXiv:2502.17168},
   year={2025}
 }
+```
+
