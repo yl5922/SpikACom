@@ -39,7 +39,7 @@ pip install spikingjelly==0.0.0.0.14 numpy==1.24.3 scipy==1.15.1 h5py==3.5.0
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-- 📄 Paper Link: coming soon
+- 📄 Paper Link: https://arxiv.org/abs/2502.17168
 
 ---
 
