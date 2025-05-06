@@ -1,7 +1,7 @@
-# SpikACom: A Neuromorphic Computing Framework for Green Communication
+# SpikACom: A Neuromorphic Computing Framework for Green Wireless Communication
 
 This repository contains the simulation code for the paper:  
-**"SpikACom: A Neuromorphic Computing Framework for Green Communication."**
+**"SpikACom: A Neuromorphic Computing Framework for Green Wireless Communication."**
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -11,7 +11,7 @@ This repository contains the simulation code for the paper:
 
 ## Introduction
 
-SpikACom is a neuromorphic computing framework designed to enable energy-efficient and adaptive communication by leveraging spiking neural networks (SNNs). It is <u>suited for</u> dynamic wireless environments, <u>and can</u> efficiently adapt to new channel distributions with significantly <u>reduced</u> catastrophic forgetting. This repository provides the simulation code used in our paper to evaluate the performance of SpikACom in three representative communication scenarios: <u>task-oriented semantic communication, MIMO beamforming,</u> and OFDM channel estimation.
+SpikACom is a neuromorphic computing framework designed to enable energy-efficient and adaptive communication by leveraging spiking neural networks (SNNs). It is <u>optimized for</u> dynamic wireless environments, which can</u> efficiently adapt to new channel distributions with significantly <u>reduced</u> catastrophic forgetting. This repository provides the simulation code used in our paper to evaluate its performance in three representative communication scenarios: <u>task-oriented semantic communication, MIMO beamforming,</u> and OFDM channel estimation.
 
 ## Dependencies
 
@@ -129,7 +129,7 @@ If you find this repository useful, please consider citing the following paper:
 
 ```bibtex
 @article{liu2025spikacom,
-  title={SpikACom: A Neuromorphic Computing Framework for Green Communications},
+  title={SpikACom: A Neuromorphic Computing Framework for Green Wireless Communications},
   author={Liu, Yanzhen and Qin, Zhijin and Zhu, Yongxu and Li, Geoffrey Ye},
   journal={arXiv preprint arXiv:2502.17168},
   year={2025}
